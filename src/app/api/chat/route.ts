@@ -1,5 +1,5 @@
+import { API_CONFIG } from "@/app/consts/config";
 import { NextResponse } from "next/server";
-import { API_CONFIG } from "../consts/config";
 
 export async function POST(req: Request) {
   const { userMessage } = await req.json();
