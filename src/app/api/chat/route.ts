@@ -11,7 +11,7 @@ export async function POST(req: Request) {
       Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
     },
     body: JSON.stringify({
-      model: "gpt-4",
+      model: "gpt-4-turbo",
       messages: [{ role: "user", content: userMessage }],
     }),
   });
