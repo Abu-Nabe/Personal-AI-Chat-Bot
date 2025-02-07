@@ -14,9 +14,7 @@ export default function Home() {
     <div>
       {/* Use Toolbar component */}
       <Toolbar
-        title="Welcome to My Site"
-        leftButtonLabel="Left"
-        rightButtonLabel="Right"
+        title="Personalized AI"
       />
     </div>
   );
