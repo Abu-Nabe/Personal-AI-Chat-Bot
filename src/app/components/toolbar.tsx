@@ -15,7 +15,7 @@ const Toolbar: React.FC<ToolbarProps> = ({
   return (
     <div className="toolbarContainer">
       <div className="title">{title}</div>
-      <hr className="hr_line"></hr>
+      <hr className="hr_shadow_line"></hr>
     </div>
   );
 };

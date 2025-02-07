@@ -1,6 +1,7 @@
 .toolbarContainer {
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   padding: 10px 20px;
   background-color: #D3D3D3;
@@ -15,9 +16,11 @@
   color: black;
 }
 
-.hr_line {
+.hr_shadow_line {
     border: none;
+    width: 100%;
     height: 1px;
+    margin-top: 10px;
     background-color: #D3D3D3;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
