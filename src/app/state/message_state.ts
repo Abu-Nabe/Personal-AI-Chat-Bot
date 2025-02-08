@@ -1,11 +1,17 @@
 import { create } from "zustand";
 
+type Message = {
+  role: "user" | "ai";
+  content: string;
+};
+
 type MessageState = {
-  messages: string[];
-  addMessage: (message: string) => void;
+  messages: Message[];
+  addMessage: (role: "user" | "ai", content: string) => void;
 };
 
 export const useMessageStore = create<MessageState>((set) => ({
   messages: [],
-  addMessage: (message) => set((state) => ({ messages: [...state.messages, message] })),
+  addMessage: (role, content) =>
+    set((state) => ({ messages: [...state.messages, { role, content }] })),
 }));
