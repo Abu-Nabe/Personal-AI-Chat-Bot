@@ -8,8 +8,9 @@ export default function Home() {
     <div>
       {/* Use Toolbar component */}
       <Toolbar
-        title="Personalized AI"
+        title="Abu - AI"
       />
+      
       <ChatInput />
     </div>
   );
