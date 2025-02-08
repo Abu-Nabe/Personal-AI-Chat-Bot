@@ -27,7 +27,7 @@ const ChatInput: React.FC = () => {
       const data = await res.json();
       console.log("API Response:", data);
 
-      const aiResponse = data?.choices?.[0]?.message?.content || "No valid response";
+      const aiResponse = data?.choices?.[0]?.message?.content || "You ran out of tokens, buy more to use me";
       addMessage("ai", aiResponse); // Add AI response to store
     } catch (error) {
       console.error("Error:", error);
@@ -42,7 +42,12 @@ const ChatInput: React.FC = () => {
         type="text"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
-        placeholder="Type your message..."
+        placeholder="Message AbuGPT"
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            sendMessage(message); // Call sendMessage when Enter is pressed
+          }
+        }}
       />
       <button className="chat_send_button" onClick={() => sendMessage(message)}>
         Send

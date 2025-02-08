@@ -1,17 +1,21 @@
-import Image from "next/image";
-import Toolbar from "./components/toolbar";
-import ChatInput from "./components/chat_text_field";
+"use client"; 
+
+import Toolbar from "./components/toolbar_layout";
+import ChatInput from "./components/chat_text_field_layout";
+import MessageLayout from "./components/messages_layout";
 
 export default function Home() {
 
   return (
-    <div>
-      {/* Use Toolbar component */}
-      <Toolbar
-        title="Abu - AI"
-      />
-      
+    <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
+      <Toolbar title="Abu - AI" />
+
+      <div style={{ flexGrow: 1, overflowY: "auto", padding: "10px" }}>
+        <MessageLayout />
+      </div>
+
       <ChatInput />
     </div>
   );
 }
+
